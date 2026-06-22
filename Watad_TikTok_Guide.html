@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل إنشاء وتجهيز حساب تيك توك للأعمال - Watad Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1E90DD 0%, #141E3C 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid #FFB800;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .header small {
+            display: block;
+            font-size: 14px;
+            opacity: 0.85;
+            margin-top: 10px;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            padding: 0 30px;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .nav-tabs button {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 180px;
+            font-family: inherit;
+        }
+
+        .nav-tabs button:hover {
+            color: #1E90DD;
+        }
+
+        .nav-tabs button.active {
+            color: #1E90DD;
+            border-bottom-color: #1E90DD;
+            background: #f0f7ff;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-right: 4px solid #1E90DD;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 5px 20px rgba(30, 144, 221, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .step-card h3 {
+            color: #1E90DD;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .step-icon {
+            font-size: 24px;
+            width: 35px;
+            height: 35px;
+            background: #E6F1FB;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .steps-list {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            background: #1E90DD;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .step-text {
+            color: #333;
+            flex: 1;
+            padding-top: 2px;
+            font-size: 14px;
+        }
+
+        /* Video Container (Embedded - يشتغل داخل الصفحة) */
+        .video-block {
+            background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 5px 20px rgba(30, 144, 221, 0.2);
+        }
+
+        .video-block h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .video-fallback {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .video-fallback a {
+            display: inline-block;
+            background: #FFB800;
+            color: #0D5BA5;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .video-fallback a:hover {
+            background: #ffc933;
+            transform: translateY(-2px);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #E6F1FB;
+            border-right: 4px solid #1E90DD;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #0D5BA5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #e9ecef;
+            color: #666;
+        }
+
+        .footer h4 {
+            color: #1E90DD;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+            color: #1E90DD;
+            font-weight: 600;
+        }
+
+        /* Success Message */
+        .success-box {
+            background: #E8F5E9;
+            border-right: 4px solid #4CAF50;
+            padding: 15px;
+            border-radius: 6px;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: #FFF3E0;
+            border-right: 4px solid #FF9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tip-box h4 {
+            color: #E65100;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #BF6000;
+        }
+
+        .tip-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .check {
+            color: #4CAF50;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 22px; }
+            .nav-tabs { padding: 0 8px; }
+            .nav-tabs button { font-size: 13px; min-width: auto; padding: 12px 8px; }
+            .content { padding: 20px 15px; }
+            .step-card { padding: 15px; }
+            .step-card h3 { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>دليل إنشاء وتجهيز حساب تيك توك للأعمال</h1>
+            <p>TikTok Account + Business Setup + Ads Manager</p>
+            <small>من Watad Agency | دليل عملي خطوة بخطوة بالفيديو</small>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="active" onclick="switchTab('create', event)">🎵 إنشاء حساب تيك توك</button>
+            <button onclick="switchTab('business', event)">💼 التحويل لحساب Business</button>
+            <button onclick="switchTab('ads', event)">📊 ربط Ads Manager</button>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+
+            <!-- ===== Tab 1: Create Account ===== -->
+            <div id="create" class="tab-content active">
+                <div class="success-box">
+                    ✓ هذا التاب يشرح أفضل طريقة لإنشاء حساب تيك توك احترافي يصلح كأساس للبراند والإعلانات
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-icon">🎵</span> 1. إنشاء حساب TikTok</h3>
+                    <p class="step-subtitle">الحساب هو الأساس الذي يُبنى عليه حضور البراند وحملاته الإعلانية لاحقاً</p>
+
+                    <div class="info-box">
+                        💡 <strong>نصيحة:</strong> استخدم بريد العمل (مثل اسمك@watad.agency) ورقم موبايل فعّال بدل البريد الشخصي حتى تبقى كل الصلاحيات والإشعارات منظمة بمكان واحد.
+                    </div>
+
+                    <div class="steps-list">
+                        <div class="step-item"><span class="step-number">1</span><span class="step-text">نزّل تطبيق <strong>TikTok</strong> من App Store أو Google Play، أو افتح <strong>tiktok.com</strong></span></div>
+                        <div class="step-item"><span class="step-number">2</span><span class="step-text">اضغط <strong>Sign Up</strong> واختر التسجيل عبر <strong>Email أو رقم الموبايل</strong> (بدل أرقام السوشيال الجاهزة)</span></div>
+                        <div class="step-item"><span class="step-number">3</span><span class="step-text">حدد <strong>تاريخ الميلاد</strong> ثم أدخل البريد/الرقم وأنشئ <strong>باسوورد قوي</strong> (أحرف كبيرة + أرقام + رموز)</span></div>
+                        <div class="step-item"><span class="step-number">4</span><span class="step-text">أدخل <strong>كود التحقق</strong> اللي يوصلك على الإيميل أو الموبايل لتفعيل الحساب</span></div>
+                        <div class="step-item"><span class="step-number">5</span><span class="step-text">اختر <strong>اسم المستخدم (Username)</strong> المطابق لاسم البراند (بدون رموز زائدة قدر الإمكان)</span></div>
+                        <div class="step-item"><span class="step-number">6</span><span class="step-text">ارفع <strong>صورة البروفايل (اللوغو)</strong> وأضف <strong>Bio</strong> مختصر يوضّح نشاط البراند</span></div>
+                        <div class="step-item"><span class="step-number">7</span><span class="step-text">فعّل <strong>Two-Step Verification (2FA)</strong> من Settings → Security لحماية الحساب</span></div>
+                    </div>
+
+                    <div class="video-block">
+                        <h4>📺 شرح إنشاء حساب تيك توك بالفيديو</h4>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/IVtaY7s9f0M"
+                                    title="شرح إنشاء حساب تيك توك - Watad Agency"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="video-fallback">
+                            <a href="https://youtu.be/IVtaY7s9f0M" target="_blank">🎬 شاهد الفيديو على YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-icon">✨</span> 2. تجهيز البروفايل بشكل احترافي</h3>
+                    <p class="step-subtitle">بروفايل مكتمل يرفع الثقة ويحسّن أداء المحتوى والإعلانات</p>
+
+                    <div class="steps-list">
+                        <div class="step-item"><span class="step-number">1</span><span class="step-text">استخدم <strong>صورة لوغو واضحة</strong> بخلفية نظيفة (يفضّل مربع بدقة عالية)</span></div>
+                        <div class="step-item"><span class="step-number">2</span><span class="step-text">اكتب <strong>Bio</strong> فيه قيمة البراند + كلمة مفتاحية + إيموجي خفيف (الحد ~80 حرف)</span></div>
+                        <div class="step-item"><span class="step-number">3</span><span class="step-text">وحّد <strong>اسم العرض (Name)</strong> و<strong>الـ Username</strong> مع بقية منصات البراند</span></div>
+                        <div class="step-item"><span class="step-number">4</span><span class="step-text">جهّز <strong>محتوى أولي</strong> (3-5 فيديوهات) قبل بدء أي حملة إعلانية</span></div>
+                    </div>
+
+                    <div class="info-box">
+                        📌 <strong>ملاحظة للميديا باير:</strong> رابط الموقع (Website link) في البايو يتفعّل بعد التحويل إلى حساب Business — شوف التاب الثاني.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Tab 2: Business Account ===== -->
+            <div id="business" class="tab-content">
+                <div class="success-box">
+                    ✓ هذا التاب يشرح تحويل الحساب إلى <strong>TikTok Business Account</strong> للوصول للتحليلات (Analytics) وأدوات الأعمال
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-icon">💼</span> 1. التحويل إلى TikTok Business Account</h3>
+                    <p class="step-subtitle">يفتح لك الإحصائيات، رابط الموقع في البايو، وأدوات الأعمال</p>
+
+                    <div class="steps-list">
+                        <div class="step-item"><span class="step-number">1</span><span class="step-text">افتح بروفايلك واضغط القائمة (☰) أعلى اليمين ثم <strong>Settings and privacy</strong></span></div>
+                        <div class="step-item"><span class="step-number">2</span><span class="step-text">روح على <strong>Account</strong> ثم اضغط <strong>Switch to Business Account</strong></span></div>
+                        <div class="step-item"><span class="step-number">3</span><span class="step-text">اختر <strong>الفئة (Category)</strong> اللي تصف نشاط البراند ثم <strong>Next</strong></span></div>
+                        <div class="step-item"><span class="step-number">4</span><span class="step-text">أضف <strong>رابط الموقع</strong> ومعلومات التواصل (إيميل / رقم) في البروفايل</span></div>
+                        <div class="step-item"><span class="step-number">5</span><span class="step-text">احفظ التغييرات — الآن يصير عندك تبويب <strong>Business Suite / Analytics</strong></span></div>
+                    </div>
+
+                    <div class="info-box">
+                        💡 <strong>الفرق بين Creator و Business:</strong> حساب الأعمال (Business) هو الأنسب للبراندات والوكالات لأنه يفتح رابط البايو وأدوات الأعمال، بينما Creator يركّز على أدوات صنّاع المحتوى والموسيقى الموسّعة.
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-icon">📈</span> 2. متابعة الأداء من Analytics</h3>
+                    <p class="step-subtitle">تقرأ أداء المحتوى وتبني عليه قرارات الإعلانات</p>
+
+                    <div class="steps-list">
+                        <div class="step-item"><span class="step-number">1</span><span class="step-text">من البروفايل روح على <strong>Business Suite</strong> ثم <strong>Analytics</strong></span></div>
+                        <div class="step-item"><span class="step-number">2</span><span class="step-text">تابع <strong>Overview</strong> و<strong>Content</strong> و<strong>Followers</strong> لمعرفة أفضل المحتوى وأوقات النشر</span></div>
+                        <div class="step-item"><span class="step-number">3</span><span class="step-text">استخدم بيانات أفضل الفيديوهات أداءً كأساس لاختيار الكرييتف بالحملات المدفوعة</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Tab 3: Ads Manager ===== -->
+            <div id="ads" class="tab-content">
+                <div class="success-box">
+                    ✓ هذا التاب يشرح إنشاء <strong>TikTok Ads Manager</strong> وربط الحساب عبر <strong>Business Center</strong> — الطريقة الأنسب للوكالات والإعلانات
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-icon">📊</span> 1. إنشاء حساب TikTok Ads Manager</h3>
+                    <p class="step-subtitle">هو لوحة إدارة الحملات المدفوعة المنفصلة عن التطبيق</p>
+
+                    <div class="steps-list">
+                        <div class="step-item"><span class="step-number">1</span><span class="step-text">روح على <strong>ads.tiktok.com</strong> واضغط <strong>Create Now / Sign Up</strong></span></div>
+                        <div class="step-item"><span class="step-number">2</span><span class="step-text">سجّل ببريد العمل وأدخل معلومات النشاط: <strong>البلد، العملة، المنطقة الزمنية، اسم الشركة</strong></span></div>
+                        <div class="step-item"><span class="step-number">3</span><span class="step-text">أكّد البريد وأكمل بيانات الحساب الإعلاني (Ad Account)</span></div>
+                        <div class="step-item"><span class="step-number">4</span><span class="step-text">أضف <strong>طريقة الدفع</strong> من Payment لتفعيل تشغيل الحملات</span></div>
+                    </div>
+
+                    <div class="info-box">
+                        ⚠️ <strong>مهم:</strong> اختيار <strong>العملة والمنطقة الزمنية</strong> ما يتغيّر بعد الإنشاء، فتأكد منهم من البداية حسب السوق المستهدف.
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-icon">🏢</span> 2. تنظيم الأصول عبر Business Center</h3>
+                    <p class="step-subtitle">الأنسب لو تدير حسابات عملاء متعددين داخل الوكالة</p>
+
+                    <div class="steps-list">
+                        <div class="step-item"><span class="step-number">1</span><span class="step-text">روح على <strong>business.tiktok.com</strong> وأنشئ <strong>Business Center</strong> باسم الوكالة</span></div>
+                        <div class="step-item"><span class="step-number">2</span><span class="step-text">أضف <strong>Ad Account</strong> داخل الـ Business Center (إنشاء جديد أو طلب وصول لحساب العميل)</span></div>
+                        <div class="step-item"><span class="step-number">3</span><span class="step-text">من <strong>Assets</strong> اربط <strong>TikTok Account</strong> الخاص بالبراند للحساب الإعلاني</span></div>
+                        <div class="step-item"><span class="step-number">4</span><span class="step-text">وزّع <strong>الصلاحيات (Members / Roles)</strong> لأعضاء الفريق حسب الدور</span></div>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4>🎯 ليش الربط مهم للميديا باير؟</h4>
+                        <div class="tip-item"><span class="check">✓</span><span>تشغّل إعلانات <strong>Spark Ads</strong> من بوستات البراند الأصلية مباشرة</span></div>
+                        <div class="tip-item"><span class="check">✓</span><span>تربط <strong>TikTok Pixel / Events</strong> لتتبّع التحويلات بدقة</span></div>
+                        <div class="tip-item"><span class="check">✓</span><span>إدارة مركزية لكل حسابات العملاء بدون مشاركة باسوردات</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h4>شكراً لثقتك بـ Watad Agency</h4>
+            <p>نحن هنا لمساعدتك في بناء حضورك الرقمي وإدارة حملاتك الإعلانية بكفاءة</p>
+            <p>آخر تحديث: يونيو 2026</p>
+            <div class="footer-contact">
+                social@watad.agency (Social Media) | performance@watad.agency (Meta &amp; TikTok Ads) | Watad Agency
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName, evt) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-tabs button').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
